@@ -48,7 +48,9 @@ class _DetailPageState extends State<DetailPage> {
     if (AppTheme.fullWidth(context) < 393) {
       titleStyle = TextStyles.title.copyWith(fontSize: 23).bold;
     }
-    return Scaffold(
+    return
+
+      Scaffold(
       backgroundColor: LightColor.extraLightBlue,
       body: SafeArea(
         bottom: false,
@@ -113,7 +115,7 @@ class _DetailPageState extends State<DetailPage> {
                                 activeColor: LightColor.purpleExtraLight,
                                 backgroundColor:
                                     LightColor.grey.withOpacity(.3),
-                                title: "Good Review",
+                                title: "Reviews",
                                 durationTime: 500),
                             ProgressWidget(
                                 value: model.totalScore,
@@ -121,7 +123,7 @@ class _DetailPageState extends State<DetailPage> {
                                 activeColor: LightColor.purpleLight,
                                 backgroundColor:
                                     LightColor.grey.withOpacity(.3),
-                                title: "Total Score",
+                                title: "Puntaje total",
                                 durationTime: 300),
                             ProgressWidget(
                                 value: model.satisfaction,
@@ -129,7 +131,7 @@ class _DetailPageState extends State<DetailPage> {
                                 activeColor: LightColor.purple,
                                 backgroundColor:
                                     LightColor.grey.withOpacity(.3),
-                                title: "Satisfaction",
+                                title: "Satisfacción",
                                 durationTime: 800),
                           ],
                         ),
@@ -137,7 +139,7 @@ class _DetailPageState extends State<DetailPage> {
                           thickness: .3,
                           color: LightColor.grey,
                         ),
-                        Text("About", style: titleStyle).vP16,
+                        Text("Sobre ", style: titleStyle).vP16,
                         Text(
                           model.description,
                           style: TextStyles.body.subTitleColor,
@@ -175,7 +177,7 @@ class _DetailPageState extends State<DetailPage> {
                                 borderRadius: BorderRadius.circular(10)
                               ),
                               onPressed: () {},
-                              child: Text("Make an appointment", style: TextStyles.titleNormal.white,).p(10),
+                              child: Text("Haz tu cita", style: TextStyles.titleNormal.white,).p(10),
                             ),
                           ],
                         ).vP16
@@ -189,6 +191,8 @@ class _DetailPageState extends State<DetailPage> {
           ],
         ),
       ),
+
     );
+
   }
 }
