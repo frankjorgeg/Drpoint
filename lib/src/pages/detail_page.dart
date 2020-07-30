@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drpoint/src/theme/light_color.dart';
-import 'package:drpoint/src/model/dactor_model.dart';
+import 'package:drpoint/src/model/doctor_model.dart';
 import 'package:drpoint/src/theme/text_styles.dart';
 import 'package:drpoint/src/theme/theme.dart';
 import 'package:drpoint/src/theme/extention.dart';
@@ -56,7 +56,7 @@ class _DetailPageState extends State<DetailPage> {
         bottom: false,
         child: Stack(
           children: <Widget>[
-            Image.asset(model.image),
+            Image.network(model.image),
             DraggableScrollableSheet(
               maxChildSize: .8,
               initialChildSize: .6,
@@ -64,7 +64,7 @@ class _DetailPageState extends State<DetailPage> {
               builder: (context, scrollController) {
                 return Container(
                   height: AppTheme.fullHeight(context) * .5,
-                  padding: EdgeInsets.only(left:19,right:19,top: 16),//symmetric(horizontal: 19, vertical: 16),
+                  padding: EdgeInsets.only(left:15,right:2,top: 16),//symmetric(horizontal: 19, vertical: 16),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
@@ -87,21 +87,22 @@ class _DetailPageState extends State<DetailPage> {
                                 style: titleStyle,
                               ),
                               SizedBox(
-                                width: 10,
+                                width: 5,
                               ),
                               Icon(Icons.check_circle,
                                   size: 18,
                                   color: Theme.of(context).primaryColor),
                               Spacer(),
-                              RatingStar(
-                                rating: model.rating,
-                              )
+
                             ],
                           ),
                           subtitle: Text(
                             model.type,
                             style: TextStyles.bodySm.subTitleColor.bold,
                           ),
+
+                        ), RatingStar(
+                          rating: model.rating,
                         ),
                         Divider(
                           thickness: .3,

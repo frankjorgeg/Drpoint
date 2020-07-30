@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:drpoint/src/model/dactor_model.dart';
+import 'package:drpoint/src/model/doctor_model.dart';
 import 'package:drpoint/src/model/data.dart';
 import 'package:drpoint/src/theme/extention.dart';
 import 'package:drpoint/src/theme/light_color.dart';
@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<DoctorModel> doctorDataList;
+
   @override
   void initState() { 
     doctorDataList = doctorMapList.map((x)=> DoctorModel.fromJson(x)).toList();
@@ -258,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.circular(15),
                 color: randomColor(),
               ),
-              child: Image.asset(
+              child: Image.network(
                 model.image,
                 height: 50,
                 width: 50,
